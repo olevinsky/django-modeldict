@@ -94,6 +94,7 @@ class ModelDict(CachedDict):
             **{self.key: key}
         )
         self._populate(reset=True)
+        return getattr(instance, self.value)
 
     def get_default(self, value):
         if not self.auto_create:
